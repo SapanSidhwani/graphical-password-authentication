@@ -21,7 +21,7 @@ const Login = ({ showAlert }) => {
             });
             credentials.password = passwordCred.join(' ');
 
-            const response = await fetch(process.env.REACT_APP_FETCH, {
+            const response = await fetch(`${process.env.REACT_APP_FETCH}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

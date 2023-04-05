@@ -30,7 +30,7 @@ const SignUp = ({ showAlert }) => {
             });
             password = passwordCred.join(' ');
 
-            const response = await fetch(process.env.REACT_APP_HOST, {
+            const response = await fetch(`${process.env.REACT_APP_HOST}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
