@@ -85,7 +85,7 @@ const ImageSplitter = ({ image, password, setPassword, category, imgIndex }) => 
             <div className="row justify-content-center">
                 {
                     pieces.map((piece, index) => {
-                        if (password.includes(`${category}${imgIndex[imgIndex.length - 1]}${index}`)) {
+                        if (password.includes(`${category}${imgIndex.slice(categoryLength)}${index}`)) {
 
                             return (
                                 <div className="col-4 m-2 p-0 w-auto">
