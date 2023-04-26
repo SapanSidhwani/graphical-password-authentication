@@ -43,6 +43,7 @@ const SignUp = ({ showAlert }) => {
 
                 localStorage.setItem('token', json.authToken);
                 showAlert("Account Created Successfully", "success");
+                console.log("Account Created Successfully");
                 navigate('/');
             }
             else {
