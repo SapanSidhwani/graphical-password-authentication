@@ -13,6 +13,9 @@ const SignUp = ({ showAlert }) => {
     }
     const handleSubmit = async (e) => {
 
+        var submitBtn = document.getElementById("subButton");
+        submitBtn.classList.add('disabled');
+
         e.preventDefault();
         let { name, email, password } = credentials;
 
@@ -51,6 +54,7 @@ const SignUp = ({ showAlert }) => {
             }
             setPasswordCred([]);
         }
+        submitBtn.classList.remove('disabled');
     }
     return (
 
@@ -59,18 +63,18 @@ const SignUp = ({ showAlert }) => {
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Name</label>
-                    <input className="form-control" autocomplete="off" name="name" id="name" value={credentials.name} onChange={handleChange} />
+                    <input className="form-control" autoComplete="off" name="name" id="name" value={credentials.name} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" name="email" id="email" value={credentials.email} aria-describedby="emailHelp" autocomplete="off" onChange={handleChange} />
+                    <input type="email" className="form-control" name="email" id="email" value={credentials.email} aria-describedby="emailHelp" autoComplete="off" onChange={handleChange} />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
 
                 {/* Provides you an images of selected category */}
                 <CategorySelector password={passwordCred} setPassword={setPasswordCred} />
 
-                <button type="submit" style={{ marginTop: '15px' }} className="mx-auto d-flex btn btn-primary mb-3">Submit</button>
+                <button type="submit" style={{ marginTop: '15px' }} id='subButton' className="mx-auto d-flex btn btn-primary mb-3">Submit</button>
             </form>
         </div>
     )

@@ -8,7 +8,7 @@ const NoteItem = (props) => {
     const { note, updateNote, showAlert } = props;
     return (
         <div className='col-auto'>
-            <div className="card h-100" style={{ minWidth: "18rem" }}>
+            <div className="card bg-body-tertiary h-100" style={{ minWidth: "18rem" }}>
                 <div className="card-body">
                     <h5 className="card-title">{note.title}</h5>
                     <p className="card-text">{note.description}</p>

@@ -10,6 +10,9 @@ const Login = ({ showAlert }) => {
 
     const handleSubmit = async (e) => {
 
+        var submitBtn = document.getElementById("subBtn");
+        submitBtn.classList.add('disabled');
+
         e.preventDefault();
         if (credentials.email.trim().length === 0 || passwordCred.length === 0) {
             showAlert('Please enter all values before proceeding', 'warning');
@@ -30,7 +33,7 @@ const Login = ({ showAlert }) => {
             });
             const json = await response.json();
             if (json.success) {
-                localStorage.setItem('token', json.authToken)
+                localStorage.setItem('token', json.authToken);
                 showAlert("Logged in Successfully", "success");
                 navigate('/');
             }
@@ -38,6 +41,7 @@ const Login = ({ showAlert }) => {
                 showAlert("Invalid Details", "danger");
             }
         }
+        submitBtn.classList.remove('disabled');
     }
 
     const onChangeFunc = (e) => {
@@ -50,11 +54,11 @@ const Login = ({ showAlert }) => {
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" autocomplete="off" className="form-control" id="email" name="email" aria-describedby="emailHelp" value={credentials.email} onChange={onChangeFunc} />
+                    <input type="email" autoComplete="off" className="form-control" id="email" name="email" aria-describedby="emailHelp" value={credentials.email} onChange={onChangeFunc} />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <CategorySelector password={passwordCred} setPassword={setPasswordCred} />
-                <button type="submit" style={{ marginTop: '15px' }} className="mx-auto d-flex btn btn-primary mb-3">Submit</button>
+                <button type="submit" style={{ marginTop: '15px' }} id='subBtn' className="mx-auto d-flex btn btn-primary mb-3">Submit</button>
             </form>
         </div>
     )
