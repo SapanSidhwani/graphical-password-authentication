@@ -4,8 +4,9 @@ import React from 'react';
 const About = () => {
     return (
         <div>
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi recusandae facere iusto ad suscipit sint quia, voluptatibus harum officia. Commodi recusandae voluptate quis veritatis ipsam a repudiandae dolor illum. Voluptas reprehenderit unde ducimus tempore obcaecati, temporibus itaque facilis suscipit, sed, fugit commodi quas earum laboriosam voluptates nesciunt mollitia voluptatibus. Molestiae blanditiis aperiam mollitia expedita tempora recusandae nihil facilis magnam nostrum dolorum aliquid ipsa, perspiciatis nisi architecto minima et explicabo, deleniti quibusdam dicta doloremque. Assumenda, totam hic iste est commodi laborum?</p>
+            <h2>ABOUT US</h2>
+            <p>Graphical password authentication is a security mechanism that replaces traditional text-based passwords with visual elements, such as images, shapes, or gestures, to authenticate users. Instead of memorizing alphanumeric combinations, users create and recall graphical passwords based on their ability to recognize and remember visual cues.</p>
+            <p>In a graphical password authentication system, users typically choose a set of images from a predefined database or upload their own images. They then define a sequence of actions or gestures, such as clicking, dragging, or drawing, on these images to create their password. During authentication, users replicate the sequence of actions on the chosen images to prove their identity.</p>
         </div>
     );
 }
