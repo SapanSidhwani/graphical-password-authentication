@@ -78,8 +78,7 @@ const ImageSplitter = ({ image, password, setPassword, category, imgIndex }) => 
             setPassword(updatedPassword);
         }
     }
-    setTimeout(() => {
-    }, 1000);
+
     return (
         <div className='container my-4' style={{ width: '550px' }}>
             <div className="row justify-content-center">

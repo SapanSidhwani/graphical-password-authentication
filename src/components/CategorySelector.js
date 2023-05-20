@@ -22,10 +22,20 @@ function CategorySelector({ password, setPassword }) {
     const [selectedImage, setSelectedImage] = useState("");
     const [imgIndex, setImgIndex] = useState("");
 
+    var removeBorder = () => {
+
+        var images_selector = document.getElementsByClassName('select-img');
+        for (let index = 0; index < images_selector.length; index++) {
+            const element = images_selector[index];
+            element.classList.remove('border-danger', 'border', 'border-4');
+        }
+    }
+
     function showCategoryImages(event) {
         const selectedOption = event.target.options[event.target.selectedIndex];
         const category = selectedOption.value;
         const categoryName = selectedOption.text;
+        removeBorder();
         setSelectedCategory(category);
         setSelectedCategoryName(categoryName);
         setSelectedImage("");
@@ -40,9 +50,12 @@ function CategorySelector({ password, setPassword }) {
 
     function handleImageClick(event, image) {
 
+        removeBorder();
         setImgIndex(event.target.alt);
         setSelectedImage(image);
+        event.target.classList.add('border-danger', 'border', 'border-4');
     }
+
     return (
         <>
             <label className="form-label" htmlFor="categories">
@@ -71,7 +84,7 @@ function CategorySelector({ password, setPassword }) {
                         {/* img-container */}
                         {images[selectedCategory].map((imagePath, index) => (
                             <img
-                                className="rounded p-0 border-2 m-3 col-auto"
+                                className="rounded p-0 m-3 col-auto select-img"
                                 style={{ height: "200px", width: "200px", cursor: "pointer" }}
                                 key={index}
                                 src={imagePath}
