@@ -87,11 +87,10 @@ const ImageSplitter = ({ image, password, setPassword, category, imgIndex }) => 
                         if (password.includes(`${category}${imgIndex.slice(categoryLength)}${index}`)) {
 
                             return (
-                                <div className="col-4 m-2 p-0 w-auto">
+                                <div className="col-4 m-2 p-0 w-auto" key={index}>
                                     <img
                                         className='rounded border border-danger border-4'
                                         style={{ height: '150px', width: '150px' }}
-                                        key={index}
                                         src={piece}
                                         onClick={(event) => activeImg(event, index)}
                                         alt={`piece ${index}`}
@@ -102,11 +101,10 @@ const ImageSplitter = ({ image, password, setPassword, category, imgIndex }) => 
                         else {
 
                             return (
-                                <div className="col-4 m-2 p-0 w-auto">
+                                <div className="col-4 m-2 p-0 w-auto" key={index}>
                                     <img
                                         className='rounded border border-white border-4'
                                         style={{ height: '150px', width: '150px' }}
-                                        key={index}
                                         src={piece}
                                         onClick={(event) => activeImg(event, index)}
                                         alt={`piece${index}`}
