@@ -18,10 +18,12 @@ const Navbar = () => {
         if (html.getAttribute('data-bs-theme') === 'light') {
             dark.classList.remove('active');
             light.classList.add('active');
+            document.body.style.backgroundImage = "url('https://www.transparenttextures.com/patterns/black-thread-light.png')";
         }
         else {
             light.classList.remove('active');
             dark.classList.add('active');
+            document.body.style.backgroundImage = "url('https://www.transparenttextures.com/patterns/black-thread.png')";
         }
     }
     return (

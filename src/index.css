@@ -6,7 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+html[data-bs-theme="dark"] > body {
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+} 
+html[data-bs-theme="light"] > body {
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+} 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
